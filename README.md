@@ -3,6 +3,8 @@ This repository contains a collection of sample Django projects that demonstrate
 
 ## Projects
 
+### My tennis club
+
 ### Blog App
 A blog application with features like user registration, login, blog post creation, commenting, etc.
 
