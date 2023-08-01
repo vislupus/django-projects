@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'myglobal.css' %}">
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;
+    }
+    </style>
+    </head>
+<body>
+
+{% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
+
+{% with firstname="Tobias" %}
+  <h1>Hello {{ firstname }}, how are you?</h1>
+{% endwith %}
+
+<ul>
+  {% for x in mymembers %}
+    <li>{{ x }}</li>
+    {% comment %} <li>{{ x|first }}</li> {% endcomment %}
+  {% endfor %}
+</ul>
+
+{% if greeting == 1 %}
+  <h1>Hello</h1>
+{% else %}
+  <h1>Bye</h1>
+{% endif %}
+
+{% with var1=1 var2=0 %}
+  {% if var1 == var2 %}
+    <h1>YES</h1>
+  {% else %}
+    <h1>NO</h1>
+  {% endif %}
+{% endwith %}
+
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in mymembers %}
+    <tr>
+      <td>{{ x.id }}</td>
+        <td>{{ x.firstname }}</td>
+      <td>{{ x.lastname }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+{% include 'footer.html' %} 
+
+</body>
+</html>
