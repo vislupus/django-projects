@@ -5,6 +5,7 @@ This repository contains a collection of sample Django projects that demonstrate
 
 ### My tennis club
 
+<!-- 
 ### Blog App
 A blog application with features like user registration, login, blog post creation, commenting, etc.
 
@@ -22,6 +23,7 @@ A real estate listing site with property search, listings by location, agent pro
 
 ### Job Board App
 A job listings site with search, job postings, applicant tracking and more.
+ -->
 
 ## Getting Started
 To run any of the apps locally, follow these steps:
@@ -30,19 +32,19 @@ To run any of the apps locally, follow these steps:
 ```
 git clone https://github.com/user/django-projects.git
 ```
-1. Navigate into the project folder
+2. Navigate into the project folder
 ```
 cd django-projects/socialnetwork
 ```
-1. Install dependencies
+3. Install dependencies
 ```
 pip install -r requirements.txt
 ```
-1. Run migrations
+4. Run migrations
 ```
 python manage.py migrate
 ```
-1. Start development server
+5. Start development server
 ```
 python manage.py runserver
 ```
