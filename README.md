@@ -6,7 +6,6 @@ This repository contains a collection of sample Django projects that demonstrate
 ### My tennis club
 
 <!-- 
-
 ### Blog App
 A blog application with features like user registration, login, blog post creation, commenting, etc.
 
@@ -24,7 +23,6 @@ A real estate listing site with property search, listings by location, agent pro
 
 ### Job Board App
 A job listings site with search, job postings, applicant tracking and more.
-
  -->
 
 ## Getting Started
