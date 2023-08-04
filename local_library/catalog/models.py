@@ -1,7 +1,8 @@
 from django.db import models
 from django.urls import reverse
 import uuid
-
+from datetime import date
+from django.contrib.auth.models import User
 
 class Genre(models.Model):
     """Model representing a book genre."""
@@ -25,14 +26,20 @@ class Book(models.Model):
 
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
 
-    def __str__(self):
-        """String for representing the Model object."""
-        return self.title
 
     def get_absolute_url(self):
         """Returns the URL to access a detail record for this book."""
         return reverse('book-detail', args=[str(self.id)])
+    
+    def display_genre(self):
+        """Creates a string for the Genre. This is required to display genre in Admin."""
+        return ', '.join([genre.name for genre in self.genre.all()[:3]])
 
+    display_genre.short_description = 'Genre'
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
 
 class BookInstance(models.Model):
     """Model representing a specific copy of a book (i.e. that can be borrowed from the library)."""
