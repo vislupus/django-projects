@@ -1,4 +1,14 @@
 # Django Project Collection
+<p align="center">
+  <img src="https://img.shields.io/github/license/vislupus/django-projects?style=flat-square" alt="Language" />
+  <img src="https://img.shields.io/github/languages/count/vislupus/django-projects?style=flat-square" alt="GitHub language count" />
+  <img src="https://img.shields.io/github/languages/top/vislupus/django-projects?style=flat-square" alt="GitHub top language" >
+  <img src="https://img.shields.io/github/last-commit/vislupus/django-projects/main?style=flat-square&color=green" alt="GitHub last commit (branch)" />
+  <img src="https://img.shields.io/github/repo-size/vislupus/django-projects?style=flat-square" alt="GitHub repo size" / >
+  <img src="https://img.shields.io/github/forks/vislupus/django-projects?style=flat-square" alt="GitHub forks" />
+  <img src="https://img.shields.io/github/stars/vislupus/django-projects?style=flat-square" alt="GitHub Repo stars" >
+  <img src="https://img.shields.io/github/watchers/vislupus/django-projects?style=flat-square" alt="GitHub watchers" >
+</p>
 This repository contains a collection of sample Django projects that demonstrate best practices and common use cases when building web applications with Django.
 
 ## Projects
