@@ -2,14 +2,14 @@
 
 {% block content %}
     <article>
-        <h2 class="mark">{% now "Y-m-d H:i" %}</em></h2>
+        <h2 class="mark">{% now "d-m-Y H:i" %}</em></h2>
         <a href="{% url 'entry-create' %}"><button>Add new entry</button></a>
     </article>
 
     {% for entry in entry_list %}
         <article>
             <h2 class="{{ entry.date_created|date:'l' }}">
-                {{ entry.date_created|date:'Y-m-d H:i' }}
+                {{ entry.date_created|date:'d-m-Y H:i' }} / {{ entry.date_created|date:'l' }}
             </h2>
             <h3>
                 <a href="{% url 'entry-detail' entry.id %}">

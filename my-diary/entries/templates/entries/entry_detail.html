@@ -11,4 +11,6 @@
         <a href="{% url 'entry-update' entry.id %}">✍️ Edit</a>
         <a href="{% url 'entry-delete' entry.id %}">⛔ Delete</a>
     </p>
+
+    <a href="{% url 'entry-list' %}">Back to list</a>
 {% endblock %}
