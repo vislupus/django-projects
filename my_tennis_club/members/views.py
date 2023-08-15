@@ -41,13 +41,16 @@ def main(request):
 
 
 def testing(request):
-    #mymembers = Member.objects.filter(firstname='Emil', id=2).order_by('firstname').values() #AND
-    mymembers = Member.objects.filter(Q(firstname='Emil') | Q(firstname='Tobias') | Q(firstname__startswith='L')).values() #OR
+    # mymembers = Member.objects.filter(firstname='Emil', id=2).order_by('firstname').values() #AND
+    mymembers = Member.objects.filter(
+        Q(firstname="Emil") | Q(firstname="Tobias") | Q(firstname__startswith="L")
+    ).values()  # OR
     template = loader.get_template("template.html")
     context = {
         "mymembers": mymembers,
     }
     return HttpResponse(template.render(context, request))
+
 
 # def testing(request):
 #     mydata = Member.objects.all()
