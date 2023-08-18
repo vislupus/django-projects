@@ -1,6 +1,7 @@
-from django.conf.urls import url
+from django.urls import path, include, re_path
 from users.views import dashboard
 
 urlpatterns = [
-    url(r"^dashboard/", dashboard, name="dashboard"),
+    re_path(r"^dashboard/", dashboard, name="dashboard"),
+    re_path(r"^accounts/", include("django.contrib.auth.urls")),
 ]
