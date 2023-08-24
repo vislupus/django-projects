@@ -1,7 +1,13 @@
+import os
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__)) # if it is located in the project one level inside django-projects\django_test_project\django_test_project
+
+MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media/')
 
 
 # Quick-start development settings - unsuitable for production
@@ -43,7 +49,7 @@ ROOT_URLCONF = "django_test_project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -105,6 +111,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
