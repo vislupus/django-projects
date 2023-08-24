@@ -3,12 +3,12 @@ from .models import Post
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ("title", "content", "date_created")
+    list_display = ("title", "content", "author", "published_at")
 
-    fields = ["title", "content", "date_created"]
+    fields = ["title", "content", "author", "published_at"]
 
-    ordering = ["-date_created"]
-    list_filter = ["date_created"]
+    ordering = ["-published_at"]
+    list_filter = ["published_at"]
 
     search_fields = ["title", "content"]
 
