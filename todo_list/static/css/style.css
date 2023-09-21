@@ -150,7 +150,8 @@ a:hover {
 /* form */
 form > * {
   display: block;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
+  margin: auto;
 }
 
 form > input[type='submit'],
