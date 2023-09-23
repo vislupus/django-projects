@@ -2,6 +2,29 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
 
+
+def pets(request, animal):
+    if not animal.isdigit():
+        return HttpResponse(f"<h1>This is a {animal}!</h1>")
+    else:
+        return HttpResponseNotFound("<h1>Strange animal!</h1>")
+
+
+def pet(request):
+    return HttpResponse("This is a pet!")
+
+
+def pet_star(request, pet):
+    # return HttpResponseRedirect(f"/animal-red/{pet}")
+    
+    redirect_path = reverse("animal-red", args=[pet])
+    return HttpResponseRedirect(redirect_path)
+
+
+def pet_star_red(request, pet):
+    return HttpResponse(f"<h1 style=\"color:red;\">This is a {pet}!</h1>")
+
+
 monthly_challenges = {
     "january": "It is January!",
     "february": "It is February!",
@@ -29,14 +52,6 @@ def index(request):
 
     response_data = f"<ul>{list_items}</ul>"
     return HttpResponse(response_data)
-
-
-def pets(request, animal):
-    return HttpResponse(f"This is a {animal}!")
-
-
-def stars(request):
-    return HttpResponse("This is a star!")
 
 
 def monthly_challenge_by_number(request, month):
